@@ -36,7 +36,7 @@ export function LoadingScreen() {
 
         {/* Loading text */}
         <div className="text-sm text-muted-foreground font-medium tracking-wide animate-fade-in-delay">
-          Ruqya Healing Hub
+          Ruqya Healing
         </div>
 
         {/* Spinner */}

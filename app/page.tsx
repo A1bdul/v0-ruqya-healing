@@ -28,18 +28,20 @@ export default function HomePage() {
   const features = [
     {
       icon: Shield,
-      title: "Authentic Islamic Healing",
-      description: "All our services are based on authentic Qur'an and Sunnah teachings",
+      title: "Unique & Different Approach",
+      description: "Our approach to healing and Ruqyah is very different and unique, focusing on the whole person",
     },
     {
       icon: Heart,
-      title: "Compassionate Care",
-      description: "We provide spiritual support with empathy and understanding",
+      title: "Multi-Dimensional Healing",
+      description:
+        "We believe healing is multi-dimensional. All areas of your life must be given attention for true transformation",
     },
     {
       icon: BookOpen,
-      title: "Educational Resources",
-      description: "Learn about Islamic spiritual healing through our articles and courses",
+      title: "Mind, Body & Soul",
+      description:
+        "We dive into human behaviour, psychology, and emotional wellness to explore how everything is connected",
     },
   ]
 
@@ -196,10 +198,12 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-5 mb-16 md:mb-20">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-foreground text-balance tracking-tight">
-              Why Choose Ruqya Healing Hub
+              Why Choose Ruqya Healing
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-pretty">
-              We are committed to providing authentic, compassionate Islamic spiritual healing services
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-pretty">
+              My philosophy is that healing is multi-dimensional. To truly heal, all areas of your life must be given
+              attention. I focus on deep lifestyle change and long-term transformation, exploring the mind, body, and
+              soul.
             </p>
           </div>
 

@@ -18,7 +18,7 @@ NC := \033[0m
 
 help: ## Show this help message
 	@echo "$(BLUE)╔════════════════════════════════════════════════════════════╗$(NC)"
-	@echo "$(BLUE)║        Ruqya Healing Hub - Full Stack Commands           ║$(NC)"
+	@echo "$(BLUE)║        Ruqya Healing - Full Stack Commands               ║$(NC)"
 	@echo "$(BLUE)╚════════════════════════════════════════════════════════════╝$(NC)"
 	@echo ""
 	@echo "$(MAGENTA)⚡ Quick Start:$(NC)"
@@ -148,7 +148,7 @@ setup: create-env docker-cleanup docker-build docker-up wait-for-services backen
 	@echo "$(GREEN)║              ✅ SETUP COMPLETE!                            ║$(NC)"
 	@echo "$(GREEN)╚════════════════════════════════════════════════════════════╝$(NC)"
 	@echo ""
-	@echo "$(CYAN)🎉 Ruqya Healing Hub is ready!$(NC)"
+	@echo "$(CYAN)🎉 Ruqya Healing is ready!$(NC)"
 	@echo ""
 	@echo "$(YELLOW)🔗 Frontend:$(NC) http://localhost:3000"
 	@echo "$(YELLOW)🔗 Backend API:$(NC) http://localhost:8000"
@@ -375,7 +375,7 @@ health: ## Check all services health
 
 info: ## Show project information
 	@echo "$(BLUE)╔════════════════════════════════════════════════════════════╗$(NC)"
-	@echo "$(BLUE)║        Ruqya Healing Hub - Project Information           ║$(NC)"
+	@echo "$(BLUE)║        Ruqya Healing - Project Information               ║$(NC)"
 	@echo "$(BLUE)╚════════════════════════════════════════════════════════════╝$(NC)"
 	@echo ""
 	@echo "$(CYAN)🎯 Full Stack Islamic Spiritual Healing Platform$(NC)"
