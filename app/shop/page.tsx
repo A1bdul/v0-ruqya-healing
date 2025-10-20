@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ShoppingCart } from "lucide-react"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { ShoppingCart, Info } from "lucide-react"
 import { useCart } from "@/contexts/cart-context"
 import { useToast } from "@/hooks/use-toast"
 import { apiClient } from "@/lib/api-client"
@@ -15,6 +16,8 @@ export default function ShopPage() {
   const { toast } = useToast()
   const [products, setProducts] = useState<Product[]>([])
   const [isLoading, setIsLoading] = useState(true)
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
+  const [isDetailsOpen, setIsDetailsOpen] = useState(false)
 
   useEffect(() => {
     fetchProducts()
@@ -43,6 +46,17 @@ export default function ShopPage() {
       title: "Added to cart",
       description: `${product.name} has been added to your cart.`,
     })
+  }
+
+  const handleViewDetails = (product: Product) => {
+    setSelectedProduct(product)
+    setIsDetailsOpen(true)
+  }
+
+  const truncateDescription = (description: string, maxLength = 120) => {
+    const plainText = description.replace(/<[^>]*>/g, "")
+    if (plainText.length <= maxLength) return plainText
+    return plainText.substring(0, maxLength) + "..."
   }
 
   if (isLoading) {
@@ -99,13 +113,21 @@ export default function ShopPage() {
                 <CardContent className="flex-1 p-6 space-y-3">
                   <CardTitle className="text-xl font-serif leading-tight">{product.name}</CardTitle>
                   <CardDescription className="text-base leading-relaxed text-pretty">
-                    {product.description}
+                    {truncateDescription(product.description)}
                   </CardDescription>
+                  <Button
+                    variant="link"
+                    className="p-0 h-auto text-primary hover:text-primary/80 font-medium"
+                    onClick={() => handleViewDetails(product)}
+                  >
+                    <Info className="h-4 w-4 mr-1" />
+                    View Full Details
+                  </Button>
                   {product.stock_quantity < 10 && product.stock_quantity > 0 && (
                     <p className="text-sm text-amber-600 font-medium">Only {product.stock_quantity} left in stock</p>
                   )}
                 </CardContent>
-                <CardFooter className="p-6 pt-0 flex items-center justify-between">
+                <CardFooter className="p-6 pt-0 flex items-center justify-between gap-3">
                   <span className="text-3xl font-bold text-primary">{formatPrice(product.price)}</span>
                   <Button
                     onClick={() => handleAddToCart(product)}
@@ -120,6 +142,55 @@ export default function ShopPage() {
             ))}
           </div>
         )}
+
+        <Dialog open={isDetailsOpen} onOpenChange={setIsDetailsOpen}>
+          <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+            {selectedProduct && (
+              <>
+                <DialogHeader>
+                  <DialogTitle className="text-3xl font-serif">{selectedProduct.name}</DialogTitle>
+                  <DialogDescription className="text-2xl font-bold text-primary mt-2">
+                    {formatPrice(selectedProduct.price)}
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="space-y-6">
+                  {selectedProduct.image && (
+                    <div className="w-full aspect-video rounded-lg overflow-hidden bg-muted">
+                      <img
+                        src={selectedProduct.image || "/placeholder.svg"}
+                        alt={selectedProduct.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+                  <div
+                    className="product-description prose prose-lg max-w-none leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: selectedProduct.description }}
+                  />
+                  {selectedProduct.stock_quantity < 10 && selectedProduct.stock_quantity > 0 && (
+                    <p className="text-base text-amber-600 font-medium">
+                      Only {selectedProduct.stock_quantity} left in stock
+                    </p>
+                  )}
+                  <div className="flex items-center gap-4 pt-4 border-t">
+                    <Button
+                      onClick={() => {
+                        handleAddToCart(selectedProduct)
+                        setIsDetailsOpen(false)
+                      }}
+                      disabled={selectedProduct.stock_quantity === 0}
+                      size="lg"
+                      className="flex-1 shadow-md hover:shadow-lg"
+                    >
+                      <ShoppingCart className="h-5 w-5 mr-2" />
+                      {selectedProduct.stock_quantity === 0 ? "Out of Stock" : "Add to Cart"}
+                    </Button>
+                  </div>
+                </div>
+              </>
+            )}
+          </DialogContent>
+        </Dialog>
 
         {/* Info Section */}
         <section className="mt-20 md:mt-24 bg-muted/50 rounded-2xl p-10 md:p-14 border border-border/50 shadow-lg">

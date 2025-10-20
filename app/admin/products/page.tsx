@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
+import { RichTextEditor } from "@/components/rich-text-editor"
 import { Switch } from "@/components/ui/switch"
 import { Plus, Edit, Trash2, Package } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
@@ -142,15 +142,14 @@ export default function AdminProductsPage() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="description">Description</Label>
-                    <Textarea
-                      id="description"
+                    <RichTextEditor
+                      label="Description"
                       value={formData.description}
-                      onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                      placeholder="Detailed description of the product"
-                      rows={3}
-                      required
+                      onChange={(value) => setFormData({ ...formData, description: value })}
                     />
+                    <p className="text-xs text-muted-foreground">
+                      Use the toolbar to format text, add bullet points, and create structured descriptions
+                    </p>
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="image">Image URL</Label>
@@ -278,7 +277,10 @@ export default function AdminProductsPage() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground line-clamp-2">{product.description}</p>
+                    <div
+                      className="text-sm text-muted-foreground line-clamp-3 product-description"
+                      dangerouslySetInnerHTML={{ __html: product.description }}
+                    />
                   </CardContent>
                 </Card>
               ))

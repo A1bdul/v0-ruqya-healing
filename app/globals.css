@@ -183,6 +183,45 @@
   @apply mt-6 mb-3 text-xl md:text-2xl font-serif font-semibold;
 }
 
+/* Added styling for product descriptions with HTML content */
+.product-description {
+  @apply text-foreground;
+}
+
+.product-description p {
+  @apply mb-4 text-base leading-relaxed;
+}
+
+.product-description ul {
+  @apply list-disc pl-6 space-y-2 my-4;
+}
+
+.product-description li {
+  @apply text-base leading-relaxed;
+}
+
+.product-description strong {
+  @apply font-semibold text-foreground;
+}
+
+.product-description h1,
+.product-description h2,
+.product-description h3 {
+  @apply font-serif font-semibold mt-6 mb-3;
+}
+
+.product-description h1 {
+  @apply text-2xl;
+}
+
+.product-description h2 {
+  @apply text-xl;
+}
+
+.product-description h3 {
+  @apply text-lg;
+}
+
 /* Enhanced button styles - Simplified to avoid CSS parsing issues */
 .btn-primary-enhanced {
   @apply relative overflow-hidden transition-all duration-200;
