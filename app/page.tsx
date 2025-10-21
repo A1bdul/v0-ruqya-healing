@@ -126,91 +126,16 @@ export default function HomePage() {
             {/* Header */}
             <div className="text-center space-y-8">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-foreground text-balance leading-tight">
-                Understanding Ruqyah Shar'iyyah
+                Understanding Ruqyah
               </h2>
               <div className="w-32 h-1.5 bg-primary mx-auto rounded-full"></div>
             </div>
 
             {/* Definition */}
-            <div className="max-w-4xl mx-auto text-center space-y-8 px-4">
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Ruqyah Shar'iyyah is authentic Islamic spiritual healing that is{" "}
-                <span className="text-foreground font-semibold">free from any forms of shirk</span> (associating
-                partners with Allah) and revolves around recitation of the Qur'an, the use of authentic supplications
-                and the seeking of assistance and refuge in Allah (SWT) alone.
-              </p>
-            </div>
-
-            {/* Three Conditions Header */}
-            <div className="max-w-3xl mx-auto text-center space-y-6 px-4">
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-foreground leading-tight">
-                Three Essential Conditions
+            <div className="max-w-4xl mx-auto space-y-6">
+              <h3 className="text-3xl md:text-4xl font-serif font-semibold text-foreground text-center">
+                What is Ruqyah?
               </h3>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Ruqyah Shar'iyyah should meet 3 conditions as mentioned by the scholars, and it is from their consensus
-                that the legalisation of Ruqyah is achieved when the 3 conditions are met:
-              </p>
-            </div>
-
-            {/* Conditions Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12 px-4">
-              {ruqyahConditions.map((condition) => (
-                <Card
-                  key={condition.number}
-                  className="border-2 border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg"
-                >
-                  <CardContent className="p-10 lg:p-12 space-y-6">
-                    {/* Number Circle */}
-                    <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold shadow-md mx-auto">
-                      {condition.number}
-                    </div>
-
-                    {/* Content */}
-                    <div className="text-center space-y-4">
-                      <h4 className="text-xl md:text-2xl font-semibold text-foreground leading-tight">
-                        {condition.title}
-                      </h4>
-                      <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                        {condition.description}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            {/* Scholarly Note */}
-            <div className="max-w-4xl mx-auto px-4">
-              <p className="text-foreground/80 leading-relaxed italic text-lg md:text-xl text-center border-l-4 border-primary pl-8">
-                "It is from the consensus of scholars that the legalisation of Ruqyah is achieved when these three
-                conditions are met."
-              </p>
-            </div>
-
-            {/* CTA */}
-            <div className="text-center pt-8">
-              <Button asChild size="lg" className="shadow-lg text-base md:text-lg px-8 py-6">
-                <Link href="/articles">Learn More About Islamic Healing</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 md:py-32 lg:py-40 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto space-y-16">
-            {/* Header */}
-            <div className="text-center space-y-6">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-foreground text-balance leading-tight">
-                Understanding Ruqyah: Types & Evidence
-              </h2>
-              <div className="w-32 h-1.5 bg-primary mx-auto rounded-full"></div>
-            </div>
-
-            {/* Definition of Ruqyah */}
-            <div className="space-y-6">
-              <h3 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">Definition of Ruqyah</h3>
               <Card className="border-2 border-primary/20">
                 <CardContent className="p-8 md:p-10 space-y-4 text-lg text-muted-foreground leading-relaxed">
                   <p>
@@ -226,58 +151,65 @@ export default function HomePage() {
               </Card>
             </div>
 
-            {/* Ruqyah Shar'iyyah Section */}
-            <div className="space-y-6">
-              <h3 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">
-                Ruqyah Shar'iyyah (Legitimate Ruqyah)
-              </h3>
+            {/* Ruqyah Shar'iyyah */}
+            <div className="space-y-12">
+              <div className="text-center space-y-6">
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-foreground leading-tight">
+                  Ruqyah Shar'iyyah (Legitimate Ruqyah)
+                </h3>
+                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+                  Authentic Islamic spiritual healing that is{" "}
+                  <span className="text-foreground font-semibold">free from any forms of shirk</span> (associating
+                  partners with Allah) and revolves around recitation of the Qur'an, the use of authentic supplications
+                  and the seeking of assistance and refuge in Allah (SWT) alone.
+                </p>
+              </div>
 
-              <ExpandableSection title="Definition & Characteristics" defaultOpen={true}>
-                <div className="space-y-4">
-                  <p>
-                    Ruqyah Shar'iyyah is Ruqyah that is free from any forms of shirk (associating partners with Allah)
-                    and revolves around recitation of the Qur'an, the use of authentic supplications and the seeking of
-                    assistance and refuge in Allah (SWT) alone.
-                  </p>
-                  <p>
-                    This type of Ruqyah should meet 3 conditions as mentioned by the scholars, and it is from their
-                    consensus that the legalisation of Ruqyah is achieved when the 3 conditions are met.
-                  </p>
-                </div>
-              </ExpandableSection>
+              {/* Three Conditions */}
+              <div className="max-w-3xl mx-auto text-center space-y-6 px-4">
+                <h4 className="text-2xl md:text-3xl font-serif font-semibold text-foreground leading-tight">
+                  Three Essential Conditions
+                </h4>
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                  Ruqyah Shar'iyyah should meet 3 conditions as mentioned by the scholars:
+                </p>
+              </div>
 
-              <ExpandableSection title="Three Essential Conditions">
-                <div className="space-y-6">
-                  <div className="space-y-2">
-                    <h5 className="font-semibold text-foreground text-lg">1. Words of Allah (Qur'an)</h5>
-                    <p>
-                      It must be with the words of Allah (Qur'an), His names and His attributes. The foundation of
-                      legitimate Ruqyah is the divine word of Allah.
-                    </p>
-                  </div>
-                  <div className="space-y-2">
-                    <h5 className="font-semibold text-foreground text-lg">2. Clear Language</h5>
-                    <p>
-                      It must be in the Arabic language or a language that is clearly understood by the people. This
-                      ensures the meaning is preserved and understood correctly.
-                    </p>
-                  </div>
-                  <div className="space-y-2">
-                    <h5 className="font-semibold text-foreground text-lg">3. Trust in Allah</h5>
-                    <p>
-                      To believe that the Ruqyah being done has no benefit by itself, but the benefits and cure are from
-                      Allah alone. This is the most important condition as it prevents shirk.
-                    </p>
-                  </div>
-                </div>
-              </ExpandableSection>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12 px-4">
+                {ruqyahConditions.map((condition) => (
+                  <Card
+                    key={condition.number}
+                    className="border-2 border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg"
+                  >
+                    <CardContent className="p-10 lg:p-12 space-y-6">
+                      {/* Number Circle */}
+                      <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold shadow-md mx-auto">
+                        {condition.number}
+                      </div>
 
+                      {/* Content */}
+                      <div className="text-center space-y-4">
+                        <h4 className="text-xl md:text-2xl font-semibold text-foreground leading-tight">
+                          {condition.title}
+                        </h4>
+                        <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                          {condition.description}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Evidence in Hadith */}
+            <div className="max-w-5xl mx-auto space-y-6">
               <ExpandableSection title="Evidence in Hadith">
                 <div className="space-y-4">
                   <p>
                     These conditions can be found in 'Fath Al-Bari' and in the sayings of Shaykh al-Islam Ibn Taymiyyah
                     concerning healing the one who is possessed. Evidence can be found in the Sunnah of the Prophet
-                    (peace be upon him) in regards to Ruqyah being allowed; this is encouraged in the following Hadith:
+                    (peace be upon him) in regards to Ruqyah being allowed:
                   </p>
                   <div className="bg-primary/5 border-l-4 border-primary p-4 rounded italic">
                     <p className="text-foreground font-semibold mb-2">
@@ -296,11 +228,13 @@ export default function HomePage() {
               </ExpandableSection>
             </div>
 
-            {/* Ruqyah Shirk'iyyah Section */}
-            <div className="space-y-6">
-              <h3 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">
-                Ruqyah Shirk'iyyah (Illegitimate Ruqyah)
-              </h3>
+            {/* Ruqyah Shirk'iyyah */}
+            <div className="max-w-5xl mx-auto space-y-6">
+              <div className="text-center space-y-4">
+                <h3 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">
+                  Ruqyah Shirk'iyyah (Illegitimate Ruqyah)
+                </h3>
+              </div>
 
               <ExpandableSection title="Definition & Dangers">
                 <div className="space-y-4">
@@ -317,11 +251,13 @@ export default function HomePage() {
               </ExpandableSection>
             </div>
 
-            {/* Warning Signs Section */}
-            <div className="space-y-6">
-              <h3 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">
-                Minor Signs of a Magician/Fake Healer
-              </h3>
+            {/* Warning Signs */}
+            <div className="max-w-5xl mx-auto space-y-6">
+              <div className="text-center space-y-4">
+                <h3 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">
+                  Warning Signs of Fake Healers
+                </h3>
+              </div>
 
               <ExpandableSection title="How to Identify Fraudulent Practitioners">
                 <div className="space-y-6">
