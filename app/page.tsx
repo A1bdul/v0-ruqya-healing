@@ -305,7 +305,7 @@ export default function HomePage() {
 
             {/* Evidence in Hadith */}
             <div className="max-w-5xl mx-auto space-y-6">
-              <ExpandableSection title="Evidence in Hadith">
+              <ExpandableSection title="Evidence in Hadith" defaultOpen={true}>
                 <div className="space-y-4">
                   <p>
                     These conditions can be found in 'Fath Al-Bari' and in the sayings of Shaykh al-Islam Ibn Taymiyyah
@@ -338,12 +338,12 @@ export default function HomePage() {
                 <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-foreground">
                   Ruqyah Shirk'iyyah
                 </h3>
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto italic">
+                <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto italic">
                   Illegitimate Ruqyah - Forbidden in Islam
                 </p>
               </div>
 
-              <ExpandableSection title="Definition & Dangers" defaultOpen={false}>
+              <ExpandableSection title="Definition & Dangers" defaultOpen={true}>
                 <div className="space-y-4">
                   <p>
                     This type of Ruqyah leads to sin and destruction upon the individual as it involves calling upon
@@ -375,7 +375,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <ExpandableSection title="How to Identify Fraudulent Practitioners" defaultOpen={false}>
+              <ExpandableSection title="How to Identify Fraudulent Practitioners" defaultOpen={true}>
                 <div className="space-y-6">
                   <div className="space-y-3">
                     <h5 className="font-semibold text-foreground text-lg flex items-start gap-3">
