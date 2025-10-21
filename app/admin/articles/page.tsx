@@ -17,7 +17,7 @@ import { useToast } from "@/hooks/use-toast"
 import { apiClient } from "@/lib/api-client"
 import type { Article, PaginatedResponse } from "@/lib/api-types"
 
-const categories = ["Evil Eye & Envy", "Black Magic", "Jinn Possession", "Jinn 'Aashiq", "Taweez", "Ruqya for Children"]
+const categories = ["About", "Jinn Possession", "Black Magic", "Evil Eyes & Envy"]
 
 export default function AdminArticlesPage() {
   const { toast } = useToast()

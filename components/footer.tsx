@@ -65,23 +65,35 @@ export function Footer() {
             <h4 className="font-semibold text-foreground">Resources</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/articles" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  About Ruqya
+                <Link
+                  href="/articles?category=About"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  About
                 </Link>
               </li>
               <li>
-                <Link href="/articles" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  FAQs
+                <Link
+                  href="/articles?category=Jinn Possession"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Jinn Possession
                 </Link>
               </li>
               <li>
-                <Link href="/articles" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Islamic Guidelines
+                <Link
+                  href="/articles?category=Black Magic"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Black Magic
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Book Consultation
+                <Link
+                  href="/articles?category=Evil Eyes %26 Envy"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Evil Eyes & Envy
                 </Link>
               </li>
             </ul>
@@ -93,8 +105,8 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 mt-0.5 text-primary" />
-                <a href="mailto:contact@ruqyahealinghub.com" className="hover:text-primary transition-colors">
-                  contact@ruqyahealinghub.com
+                <a href="mailto:Ruqyahhealing@yahoo.com" className="hover:text-primary transition-colors">
+                  Ruqyahhealing@yahoo.com
                 </a>
               </li>
             </ul>

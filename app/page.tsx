@@ -1,7 +1,32 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { BookOpen, ShoppingBag, Headphones, Calendar, Heart, Shield } from "lucide-react"
+import { ChevronDown } from "lucide-react"
+import { useState } from "react"
+
+function ExpandableSection({ title, children, defaultOpen = false }) {
+  const [isOpen, setIsOpen] = useState(defaultOpen)
+
+  return (
+    <div className="space-y-4">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between p-6 bg-card border border-border/50 rounded-lg hover:border-primary/20 transition-all group"
+      >
+        <h4 className="text-xl md:text-2xl font-semibold text-foreground text-left">{title}</h4>
+        <ChevronDown
+          className={`h-6 w-6 text-primary transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+        />
+      </button>
+      {isOpen && (
+        <div className="p-6 bg-muted/20 rounded-lg space-y-4 text-muted-foreground leading-relaxed">{children}</div>
+      )}
+    </div>
+  )
+}
 
 export default function HomePage() {
   const quickLinks = [
@@ -166,6 +191,195 @@ export default function HomePage() {
             <div className="text-center pt-8">
               <Button asChild size="lg" className="shadow-lg text-base md:text-lg px-8 py-6">
                 <Link href="/articles">Learn More About Islamic Healing</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 md:py-32 lg:py-40 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto space-y-16">
+            {/* Header */}
+            <div className="text-center space-y-6">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-foreground text-balance leading-tight">
+                Understanding Ruqyah: Types & Evidence
+              </h2>
+              <div className="w-32 h-1.5 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            {/* Definition of Ruqyah */}
+            <div className="space-y-6">
+              <h3 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">Definition of Ruqyah</h3>
+              <Card className="border-2 border-primary/20">
+                <CardContent className="p-8 md:p-10 space-y-4 text-lg text-muted-foreground leading-relaxed">
+                  <p>
+                    Ruqyah is an Islamic practice of reciting verses from the Qur'an and making supplications to seek
+                    healing and protection from ailments, both physical and spiritual. It is effective against illnesses
+                    caused by the evil eye, black magic, and possession by jinn.
+                  </p>
+                  <p className="text-foreground font-semibold">
+                    The practice is rooted in the teachings of the Prophet Muhammad (peace be upon him) and is
+                    encouraged in Islamic jurisprudence when performed correctly.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Ruqyah Shar'iyyah Section */}
+            <div className="space-y-6">
+              <h3 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">
+                Ruqyah Shar'iyyah (Legitimate Ruqyah)
+              </h3>
+
+              <ExpandableSection title="Definition & Characteristics" defaultOpen={true}>
+                <div className="space-y-4">
+                  <p>
+                    Ruqyah Shar'iyyah is Ruqyah that is free from any forms of shirk (associating partners with Allah)
+                    and revolves around recitation of the Qur'an, the use of authentic supplications and the seeking of
+                    assistance and refuge in Allah (SWT) alone.
+                  </p>
+                  <p>
+                    This type of Ruqyah should meet 3 conditions as mentioned by the scholars, and it is from their
+                    consensus that the legalisation of Ruqyah is achieved when the 3 conditions are met.
+                  </p>
+                </div>
+              </ExpandableSection>
+
+              <ExpandableSection title="Three Essential Conditions">
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                    <h5 className="font-semibold text-foreground text-lg">1. Words of Allah (Qur'an)</h5>
+                    <p>
+                      It must be with the words of Allah (Qur'an), His names and His attributes. The foundation of
+                      legitimate Ruqyah is the divine word of Allah.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <h5 className="font-semibold text-foreground text-lg">2. Clear Language</h5>
+                    <p>
+                      It must be in the Arabic language or a language that is clearly understood by the people. This
+                      ensures the meaning is preserved and understood correctly.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <h5 className="font-semibold text-foreground text-lg">3. Trust in Allah</h5>
+                    <p>
+                      To believe that the Ruqyah being done has no benefit by itself, but the benefits and cure are from
+                      Allah alone. This is the most important condition as it prevents shirk.
+                    </p>
+                  </div>
+                </div>
+              </ExpandableSection>
+
+              <ExpandableSection title="Evidence in Hadith">
+                <div className="space-y-4">
+                  <p>
+                    These conditions can be found in 'Fath Al-Bari' and in the sayings of Shaykh al-Islam Ibn Taymiyyah
+                    concerning healing the one who is possessed. Evidence can be found in the Sunnah of the Prophet
+                    (peace be upon him) in regards to Ruqyah being allowed; this is encouraged in the following Hadith:
+                  </p>
+                  <div className="bg-primary/5 border-l-4 border-primary p-4 rounded italic">
+                    <p className="text-foreground font-semibold mb-2">
+                      Awf Ibn Malik al-Ashja'i (RAA) narrated that he said to the Prophet:
+                    </p>
+                    <p>
+                      "O Allah's Messenger! We used to do Ruqyah during the days of Jahiliyyah (pre-Islamic era). What
+                      do you think of that?" He replied: "Present your Ruqyah to me; there is nothing wrong with it as
+                      long as it does not involve Shirk." (Sahih Muslim)
+                    </p>
+                  </div>
+                  <p className="font-semibold text-foreground">
+                    Therefore, Ruqyah Shar'iyyah is permissible and legal in Islam.
+                  </p>
+                </div>
+              </ExpandableSection>
+            </div>
+
+            {/* Ruqyah Shirk'iyyah Section */}
+            <div className="space-y-6">
+              <h3 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">
+                Ruqyah Shirk'iyyah (Illegitimate Ruqyah)
+              </h3>
+
+              <ExpandableSection title="Definition & Dangers">
+                <div className="space-y-4">
+                  <p>
+                    This type of Ruqyah leads to sin and destruction upon the individual as it involves calling upon
+                    other than Allah (SWT). It entails seeking assistance from the Jinn, Magicians, Horoscopes, Charms &
+                    Amulets etc.
+                  </p>
+                  <p className="font-semibold text-foreground">
+                    Therefore, it is clear that its practice is completely forbidden in Islam, which is evident from the
+                    Hadeeth of the Prophet (peace be upon him).
+                  </p>
+                </div>
+              </ExpandableSection>
+            </div>
+
+            {/* Warning Signs Section */}
+            <div className="space-y-6">
+              <h3 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">
+                Minor Signs of a Magician/Fake Healer
+              </h3>
+
+              <ExpandableSection title="How to Identify Fraudulent Practitioners">
+                <div className="space-y-6">
+                  <div className="space-y-3">
+                    <h5 className="font-semibold text-foreground text-lg flex items-start gap-3">
+                      <span className="text-primary font-bold">1.</span>
+                      <span>They tell you to pray salah and recite Quran but then give you a taweez or Amulet</span>
+                    </h5>
+                    <p className="ml-8">
+                      They encourage you to practice this shirk. Because you lack knowledge you blindly follow and you
+                      think everything is well because they told you to pray. But you've only been deceived by them
+                      making you think what you're doing is good by mixing in Quran with Magic.
+                    </p>
+                  </div>
+
+                  <div className="space-y-3">
+                    <h5 className="font-semibold text-foreground text-lg flex items-start gap-3">
+                      <span className="text-primary font-bold">2.</span>
+                      <span>They will slowly get close and get you to trust them</span>
+                    </h5>
+                    <p className="ml-8">
+                      They will listen to your problems and issues and make it seem like they are there to help. Only to
+                      use your vulnerability against you until you trust them. That's when they attack and will tell you
+                      to practice something not from Islam or the Quran and sunnah. You'll be so deluded in trust that
+                      you will follow and listen to anything.
+                    </p>
+                  </div>
+
+                  <div className="space-y-3">
+                    <h5 className="font-semibold text-foreground text-lg flex items-start gap-3">
+                      <span className="text-primary font-bold">3.</span>
+                      <span>They will tell you something that no one knows about you</span>
+                    </h5>
+                    <p className="ml-8">
+                      A secret or something extremely private and personal. You've not shared with anyone ever but
+                      somehow they know. They use magic and the connection with Jinn to find these kinds of information
+                      out. They gain your trust this way.
+                    </p>
+                  </div>
+
+                  <div className="bg-primary/10 border border-primary/20 p-4 rounded-lg mt-6">
+                    <p className="text-foreground font-semibold">
+                      Anyone who knows magic has committed shirk. Anyone who believes in their work and accepts their
+                      methods has delved into shirk.
+                    </p>
+                  </div>
+
+                  <p className="text-lg font-semibold text-foreground pt-4">
+                    Fear Allah and focus on healing through the Quran and sunnah.
+                  </p>
+                </div>
+              </ExpandableSection>
+            </div>
+
+            {/* CTA */}
+            <div className="text-center pt-8">
+              <Button asChild size="lg" className="shadow-lg text-base md:text-lg px-8 py-6">
+                <Link href="/articles">Explore More Resources</Link>
               </Button>
             </div>
           </div>
