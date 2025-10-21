@@ -28,6 +28,38 @@ function ExpandableSection({ title, children, defaultOpen = false }) {
   )
 }
 
+function ExpandablePreview({ title, preview, fullContent }) {
+  const [isExpanded, setIsExpanded] = useState(false)
+
+  return (
+    <div className="space-y-4">
+      <h3 className="text-3xl md:text-4xl font-serif font-semibold text-foreground text-center">{title}</h3>
+      <Card className="border-2 border-primary/20">
+        <CardContent className="p-8 md:p-10 space-y-6">
+          <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+            {isExpanded ? (
+              <div className="space-y-4">
+                {fullContent.map((paragraph, idx) => (
+                  <p key={idx}>{paragraph}</p>
+                ))}
+              </div>
+            ) : (
+              <p>{preview}</p>
+            )}
+          </div>
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="text-primary hover:text-primary/80 font-semibold flex items-center gap-2 transition-colors"
+          >
+            {isExpanded ? "Read Less" : "Read More"}
+            <ChevronDown className={`h-4 w-4 transition-transform ${isExpanded ? "rotate-180" : ""}`} />
+          </button>
+        </CardContent>
+      </Card>
+    </div>
+  )
+}
+
 export default function HomePage() {
   const quickLinks = [
     {
@@ -115,6 +147,24 @@ export default function HomePage() {
                 <Link href="/articles">Learn More</Link>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section className="py-24 md:py-32 lg:py-40 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <ExpandablePreview
+              title="Our Mission"
+              preview="Ruqyah healing is a life mission. I am dedicated to sharing knowledge of the unseen world, raising awareness of the evils of Jinn and black magic, and helping people suffering from affliction. All in accordance with the Qur'an, Sunnah, and authentic teachings of the Prophet (peace be upon him)."
+              fullContent={[
+                "Ruqyah healing is a life mission. Meaning for the rest of my life I will be sharing knowledge of the unseen world. I will raise awareness of the evils of Jinn and black magic. I will help people that are suffering from affliction in one way or another. All in accordance to the Quran and sunnah and the authentic teachings of the prophet pbuh. Not the nonsense that most people follow due to lack of understanding and knowledge. May Allah accept it from me even when am no more.",
+                "My role is to help empower you through knowledge. But help you to understand that your protection and healing requires you to focus on your mind, body and soul.",
+                "This takes time. I will be creating much more content and building out Ruqyahhealing teachings over the next few years. With the ultimate goal of having the No. 1 Ruqyah community in the world insha Allah and transforming many more lives.",
+                "I want to remind you to always have faith. Do not let fear overcome you. Make dua for those that are afflicted by evil. And keep the people around you world in hard times in your hearts and your duas. Stay away from evil. May Allah make it easy for all those suffering. Ameen",
+              ]}
+            />
           </div>
         </div>
       </section>
