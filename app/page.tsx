@@ -151,8 +151,73 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Why Choose Ruqya Healing */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-6 mb-16 md:mb-20">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-foreground text-balance tracking-tight">
+              Why Choose Ruqya Healing
+            </h2>
+            <div className="w-32 h-1.5 bg-primary mx-auto rounded-full"></div>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed text-pretty">
+              If you've been following me for a while, you will know that my approach to healing and Ruqyah is very
+              different and unique. My philosophy is that healing is multi-dimensional. To truly heal, all areas of your
+              life must be given attention. I focus on deep lifestyle change and long-term transformation.
+            </p>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed text-pretty">
+              Most importantly, I look at human behaviour and psychology. I dive into emotional wellness and its impact
+              on spiritual progress. Everything is connected, and that's what I like to explore, the mind, body, and
+              soul.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 max-w-6xl mx-auto">
+            {features.map((feature) => (
+              <div key={feature.title} className="text-center space-y-5 group">
+                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto group-hover:bg-primary/20 transition-all group-hover:scale-110 shadow-sm">
+                  <feature.icon className="h-9 w-9 text-primary" />
+                </div>
+                <h3 className="text-2xl font-serif font-semibold text-foreground">{feature.title}</h3>
+                <p className="text-muted-foreground leading-relaxed text-lg text-pretty">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What is Ruqyah */}
+      <section className="py-24 md:py-32 bg-muted/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto space-y-8">
+            <div className="text-center space-y-6">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-foreground text-balance">
+                What is Ruqyah?
+              </h2>
+              <div className="w-32 h-1.5 bg-primary mx-auto rounded-full"></div>
+            </div>
+            <Card className="border-2 border-primary/20">
+              <CardContent className="p-8 md:p-12 space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
+                <p>
+                  Ruqyah is an Islamic practice of reciting verses from the Qur'an and making supplications to seek
+                  healing and protection from ailments, both physical and spiritual.
+                </p>
+                <p>
+                  It is effective against illnesses caused by the evil eye, black magic, and possession by jinn. The
+                  practice is rooted in the teachings of the Prophet Muhammad (peace be upon him) and is encouraged in
+                  Islamic jurisprudence when performed correctly.
+                </p>
+                <p className="text-foreground font-semibold text-xl md:text-2xl pt-4">
+                  Authentic Ruqyah involves Qur'anic recitation, authentic supplications, and seeking help from Allah
+                  alone, free from any form of shirk.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Mission Section */}
-      <section className="py-24 md:py-32 lg:py-40 bg-background">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <ExpandablePreview
@@ -162,14 +227,15 @@ export default function HomePage() {
                 "Ruqyah healing is a life mission. Meaning for the rest of my life I will be sharing knowledge of the unseen world. I will raise awareness of the evils of Jinn and black magic. I will help people that are suffering from affliction in one way or another. All in accordance to the Quran and sunnah and the authentic teachings of the prophet pbuh. Not the nonsense that most people follow due to lack of understanding and knowledge. May Allah accept it from me even when am no more.",
                 "My role is to help empower you through knowledge. But help you to understand that your protection and healing requires you to focus on your mind, body and soul.",
                 "This takes time. I will be creating much more content and building out Ruqyahhealing teachings over the next few years. With the ultimate goal of having the No. 1 Ruqyah community in the world insha Allah and transforming many more lives.",
-                "I want to remind you to always have faith. Do not let fear overcome you. Make dua for those that are afflicted by evil. And keep the people around you world in hard times in your hearts and your duas. Stay away from evil. May Allah make it easy for all those suffering. Ameen",
+                "I want to remind you to always have faith. Do not let fear overcome you. Make dua for those that are afflicted by evil. And keep the people around the world in hard times in your hearts and your duas. Stay away from evil. May Allah make it easy for all those suffering. Ameen",
+                "Tell me what you want to see from Ruqyahhealing and how you believe we can help those that are around the world. Give me any suggestions or ideas. This is a spiritual warfare and we must open our eyes to this reality. May Allah protect us all. Ameen",
               ]}
             />
           </div>
         </div>
       </section>
 
-      {/* Ruqyah Shar'iyyah Section */}
+      {/* Understanding Ruqyah - Types & Evidence */}
       <section className="py-24 md:py-32 lg:py-40 bg-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto space-y-20 md:space-y-28">
@@ -179,36 +245,23 @@ export default function HomePage() {
                 Understanding Ruqyah
               </h2>
               <div className="w-32 h-1.5 bg-primary mx-auto rounded-full"></div>
-            </div>
-
-            {/* Definition */}
-            <div className="max-w-4xl mx-auto space-y-6">
-              <h3 className="text-3xl md:text-4xl font-serif font-semibold text-foreground text-center">
-                What is Ruqyah?
-              </h3>
-              <Card className="border-2 border-primary/20">
-                <CardContent className="p-8 md:p-10 space-y-4 text-lg text-muted-foreground leading-relaxed">
-                  <p>
-                    Ruqyah is an Islamic practice of reciting verses from the Qur'an and making supplications to seek
-                    healing and protection from ailments, both physical and spiritual. It is effective against illnesses
-                    caused by the evil eye, black magic, and possession by jinn.
-                  </p>
-                  <p className="text-foreground font-semibold">
-                    The practice is rooted in the teachings of the Prophet Muhammad (peace be upon him) and is
-                    encouraged in Islamic jurisprudence when performed correctly.
-                  </p>
-                </CardContent>
-              </Card>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                Learn the difference between legitimate and illegitimate Ruqyah, and how to protect yourself from fake
+                healers
+              </p>
             </div>
 
             {/* Ruqyah Shar'iyyah */}
             <div className="space-y-12">
               <div className="text-center space-y-6">
                 <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-foreground leading-tight">
-                  Ruqyah Shar'iyyah (Legitimate Ruqyah)
+                  Ruqyah Shar'iyyah
                 </h3>
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto italic">
+                  Legitimate Islamic Healing
+                </p>
                 <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
-                  Authentic Islamic spiritual healing that is{" "}
+                  This is Ruqyah that is{" "}
                   <span className="text-foreground font-semibold">free from any forms of shirk</span> (associating
                   partners with Allah) and revolves around recitation of the Qur'an, the use of authentic supplications
                   and the seeking of assistance and refuge in Allah (SWT) alone.
@@ -221,7 +274,8 @@ export default function HomePage() {
                   Three Essential Conditions
                 </h4>
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                  Ruqyah Shar'iyyah should meet 3 conditions as mentioned by the scholars:
+                  Ruqyah Shar'iyyah should meet 3 conditions as mentioned by the scholars, and it is from their
+                  consensus that the legalisation of Ruqyah is achieved when the 3 conditions are met:
                 </p>
               </div>
 
@@ -232,12 +286,9 @@ export default function HomePage() {
                     className="border-2 border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg"
                   >
                     <CardContent className="p-10 lg:p-12 space-y-6">
-                      {/* Number Circle */}
                       <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold shadow-md mx-auto">
                         {condition.number}
                       </div>
-
-                      {/* Content */}
                       <div className="text-center space-y-4">
                         <h4 className="text-xl md:text-2xl font-semibold text-foreground leading-tight">
                           {condition.title}
@@ -259,19 +310,22 @@ export default function HomePage() {
                   <p>
                     These conditions can be found in 'Fath Al-Bari' and in the sayings of Shaykh al-Islam Ibn Taymiyyah
                     concerning healing the one who is possessed. Evidence can be found in the Sunnah of the Prophet
-                    (peace be upon him) in regards to Ruqyah being allowed:
+                    (peace be upon him) in regards to Ruqyah being allowed; this is encouraged in the following Hadith:
                   </p>
-                  <div className="bg-primary/5 border-l-4 border-primary p-4 rounded italic">
-                    <p className="text-foreground font-semibold mb-2">
+                  <div className="bg-primary/5 border-l-4 border-primary p-6 rounded-lg space-y-3">
+                    <p className="text-foreground font-semibold">
                       Awf Ibn Malik al-Ashja'i (RAA) narrated that he said to the Prophet:
                     </p>
-                    <p>
+                    <p className="italic text-lg">
                       "O Allah's Messenger! We used to do Ruqyah during the days of Jahiliyyah (pre-Islamic era). What
-                      do you think of that?" He replied: "Present your Ruqyah to me; there is nothing wrong with it as
-                      long as it does not involve Shirk." (Sahih Muslim)
+                      do you think of that?"
+                    </p>
+                    <p className="italic text-lg">
+                      He replied: "Present your Ruqyah to me; there is nothing wrong with it as long as it does not
+                      involve Shirk." (Sahih Muslim)
                     </p>
                   </div>
-                  <p className="font-semibold text-foreground">
+                  <p className="font-semibold text-foreground text-lg">
                     Therefore, Ruqyah Shar'iyyah is permissible and legal in Islam.
                   </p>
                 </div>
@@ -281,12 +335,15 @@ export default function HomePage() {
             {/* Ruqyah Shirk'iyyah */}
             <div className="max-w-5xl mx-auto space-y-6">
               <div className="text-center space-y-4">
-                <h3 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">
-                  Ruqyah Shirk'iyyah (Illegitimate Ruqyah)
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-foreground">
+                  Ruqyah Shirk'iyyah
                 </h3>
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto italic">
+                  Illegitimate Ruqyah - Forbidden in Islam
+                </p>
               </div>
 
-              <ExpandableSection title="Definition & Dangers">
+              <ExpandableSection title="Definition & Dangers" defaultOpen={false}>
                 <div className="space-y-4">
                   <p>
                     This type of Ruqyah leads to sin and destruction upon the individual as it involves calling upon
@@ -295,8 +352,14 @@ export default function HomePage() {
                   </p>
                   <p className="font-semibold text-foreground">
                     Therefore, it is clear that its practice is completely forbidden in Islam, which is evident from the
-                    Hadeeth of the Prophet (peace be upon him).
+                    above Hadeeth of the Prophet (peace be upon him).
                   </p>
+                  <div className="bg-destructive/10 border border-destructive/20 p-4 rounded-lg mt-4">
+                    <p className="text-foreground font-semibold">
+                      Anyone who knows magic has committed shirk. Anyone who believes in their work and accepts their
+                      methods has delved into shirk.
+                    </p>
+                  </div>
                 </div>
               </ExpandableSection>
             </div>
@@ -304,16 +367,19 @@ export default function HomePage() {
             {/* Warning Signs */}
             <div className="max-w-5xl mx-auto space-y-6">
               <div className="text-center space-y-4">
-                <h3 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">
-                  Warning Signs of Fake Healers
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-foreground">
+                  Minor Signs of a Magician/Fake Healer
                 </h3>
+                <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+                  Protect yourself by recognizing these warning signs
+                </p>
               </div>
 
-              <ExpandableSection title="How to Identify Fraudulent Practitioners">
+              <ExpandableSection title="How to Identify Fraudulent Practitioners" defaultOpen={false}>
                 <div className="space-y-6">
                   <div className="space-y-3">
                     <h5 className="font-semibold text-foreground text-lg flex items-start gap-3">
-                      <span className="text-primary font-bold">1.</span>
+                      <span className="text-primary font-bold shrink-0">1.</span>
                       <span>They tell you to pray salah and recite Quran but then give you a taweez or Amulet</span>
                     </h5>
                     <p className="ml-8">
@@ -325,7 +391,7 @@ export default function HomePage() {
 
                   <div className="space-y-3">
                     <h5 className="font-semibold text-foreground text-lg flex items-start gap-3">
-                      <span className="text-primary font-bold">2.</span>
+                      <span className="text-primary font-bold shrink-0">2.</span>
                       <span>They will slowly get close and get you to trust them</span>
                     </h5>
                     <p className="ml-8">
@@ -338,7 +404,7 @@ export default function HomePage() {
 
                   <div className="space-y-3">
                     <h5 className="font-semibold text-foreground text-lg flex items-start gap-3">
-                      <span className="text-primary font-bold">3.</span>
+                      <span className="text-primary font-bold shrink-0">3.</span>
                       <span>They will tell you something that no one knows about you</span>
                     </h5>
                     <p className="ml-8">
@@ -348,32 +414,25 @@ export default function HomePage() {
                     </p>
                   </div>
 
-                  <div className="bg-primary/10 border border-primary/20 p-4 rounded-lg mt-6">
-                    <p className="text-foreground font-semibold">
+                  <div className="bg-destructive/10 border border-destructive/20 p-6 rounded-lg mt-6">
+                    <p className="text-foreground font-semibold text-lg text-center">
                       Anyone who knows magic has committed shirk. Anyone who believes in their work and accepts their
                       methods has delved into shirk.
                     </p>
                   </div>
 
-                  <p className="text-lg font-semibold text-foreground pt-4">
+                  <p className="text-lg font-semibold text-foreground pt-4 text-center">
                     Fear Allah and focus on healing through the Quran and sunnah.
                   </p>
                 </div>
               </ExpandableSection>
-            </div>
-
-            {/* CTA */}
-            <div className="text-center pt-8">
-              <Button asChild size="lg" className="shadow-lg text-base md:text-lg px-8 py-6">
-                <Link href="/articles">Explore More Resources</Link>
-              </Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Quick Links */}
-      <section className="py-20 md:py-24 bg-muted/30">
+      <section className="py-20 md:py-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {quickLinks.map((item) => (
@@ -388,34 +447,6 @@ export default function HomePage() {
                   </CardContent>
                 </Card>
               </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-20 md:py-24 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-5 mb-16 md:mb-20">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-foreground text-balance tracking-tight">
-              Why Choose Ruqya Healing
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-pretty">
-              My philosophy is that healing is multi-dimensional. To truly heal, all areas of your life must be given
-              attention. I focus on deep lifestyle change and long-term transformation, exploring the mind, body, and
-              soul.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
-            {features.map((feature) => (
-              <div key={feature.title} className="text-center space-y-5 group">
-                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto group-hover:bg-primary/20 transition-all group-hover:scale-110 shadow-sm">
-                  <feature.icon className="h-9 w-9 text-primary" />
-                </div>
-                <h3 className="text-2xl font-serif font-semibold text-foreground">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed text-lg text-pretty">{feature.description}</p>
-              </div>
             ))}
           </div>
         </div>
